@@ -25,12 +25,11 @@ def Calcular(digitos):
         return 1 + Calcular(digitos // 10)
 
 def Binario(NumeroBinario):
-    if NumeroBinario == 0:
-        return 0
+    if NumeroBinario < 0:
+        return NumeroBinario
     else:
-        resultado3 = NumeroBinario % 100
-        resultado4 = resultado3 // 100
-        return Binario(resultado3)
+        return Binario(NumeroBinario % 2)
+
 
 
 
