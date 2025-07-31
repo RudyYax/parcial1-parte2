@@ -13,6 +13,16 @@ def repetitiva(palabra1, veces):
     else:
         resultado = repetitiva(palabra1, veces - 1)
         return  resultado + repetitiva(palabra1, veces - 1)
+def contar(cadena, letra):
+    if letra in cadena:
+        return cadena.count(letra)
+
+def Calcular(digitos):
+    if digitos < 10:
+        return digitos
+    else:
+        return  Calcular(digitos // 10)
+
 
 
 
@@ -38,5 +48,19 @@ while opcion != 6:
             palabra1 = input("Ingrese la palabra: ")
             veces = int(input("Ingrese el numero de veces: "))
             print("La palabra es: ", repetitiva(palabra1, veces))
+        case 3:
+            print("\n Contar cuantas veces aparece una letra en una cadena")
+            cadena = input("Ingrese una palabra: ")
+            letra = input("Ingrese la letra que desea ver cuantas veces se repite: ")
+            print(f"La letra {letra} aparece ", contar(cadena, letra))
+        case 4:
+            print("\n Convertir un numero decimal a binario")
+
+        case 5:
+            print("Calcular cuantos digitos tiene un numero")
+            digitos = int(input("Ingrese un numero: "))
+            print(f"El numero {digitos} digitos tiene", Calcular(digitos), "Digitos")
+
+
 
 
