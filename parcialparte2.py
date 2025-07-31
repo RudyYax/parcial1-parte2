@@ -27,14 +27,13 @@ def Calcular(digitos):
     else:
         return 1 + Calcular(digitos // 10)
 
-def Binario(NumeroBinario):
-    if NumeroBinario == 0:
-        return ''
+def Binario(Numerobinario):
+    if Numerobinario == 0:
+        return 0
     else:
-        a = NumeroBinario // 2
-        b = NumeroBinario % 2
-        resultado = a +b
-        return Binario(resultado)
+        a = Numerobinario % 2
+        b = Numerobinario // 2
+        return (a) + 10 * Binario(b)
 
 
 
