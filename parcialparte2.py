@@ -7,6 +7,13 @@ def MCD(numero1, numero2):
         resultado = numero1 % numero2
         resultado2 = numero2 % numero1
         return MCD(resultado, resultado2)
+def repetitiva(palabra1, veces):
+    if veces == 1:
+        return palabra1
+    else:
+        resultado = repetitiva(palabra1, veces - 1)
+        return  resultado + repetitiva(palabra1, veces - 1)
+
 
 
 print("Parcial parte 2")
@@ -26,4 +33,10 @@ while opcion != 6:
             numero1 = int(input("Ingrese el primer numero: "))
             numero2 = int(input("Ingrese el segundo numero: "))
             print("El resultado es: ", MCD(numero1, numero2))
+        case 2:
+            print("\n crear una cadena repetitiva N veces")
+            palabra1 = input("Ingrese la palabra: ")
+            veces = int(input("Ingrese el numero de veces: "))
+            print("La palabra es: ", repetitiva(palabra1, veces))
+
 
