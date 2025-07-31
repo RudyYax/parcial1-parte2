@@ -1,3 +1,6 @@
+from unittest import result
+
+
 def MCD(numero1, numero2):
     if numero1 == 0:
         return numero2
@@ -25,10 +28,13 @@ def Calcular(digitos):
         return 1 + Calcular(digitos // 10)
 
 def Binario(NumeroBinario):
-    if NumeroBinario < 0:
-        return NumeroBinario
+    if NumeroBinario == 0:
+        return ''
     else:
-        return Binario(NumeroBinario % 2)
+        a = NumeroBinario // 2
+        b = NumeroBinario % 2
+        resultado = a +b
+        return Binario(resultado)
 
 
 
