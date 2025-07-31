@@ -7,12 +7,13 @@ def MCD(numero1, numero2):
         resultado = numero1 % numero2
         resultado2 = numero2 % numero1
         return MCD(resultado, resultado2)
+
 def repetitiva(palabra1, veces):
     if veces == 1:
         return palabra1
     else:
-        resultado = repetitiva(palabra1, veces - 1)
-        return  resultado + repetitiva(palabra1, veces - 1)
+        return  palabra1 + repetitiva(palabra1, veces - 1)
+
 def contar(cadena, letra):
     if letra in cadena:
         return cadena.count(letra)
@@ -21,8 +22,7 @@ def Calcular(digitos):
     if digitos < 10:
         return digitos
     else:
-        e = digitos // 10
-        return 1 + Calcular(e)
+        return 1 + Calcular(digitos // 10)
 
 
 print("Parcial parte 2")
@@ -54,7 +54,11 @@ while opcion != 6:
             print("\n crear una cadena repetitiva N veces")
             palabra1 = input("Ingrese la palabra: ")
             veces = int(input("Ingrese el numero de veces: "))
-            print("La palabra es: ", repetitiva(palabra1, veces))
+            if veces < 0:
+                print("el numero no puede ser negativo")
+                break
+            else:
+                print("La palabra es: ", repetitiva(palabra1, veces))
         case 3:
             print("\n Contar cuantas veces aparece una letra en una cadena")
             cadena = input("Ingrese una palabra: ")
@@ -66,7 +70,10 @@ while opcion != 6:
         case 5:
             print("Calcular cuantos digitos tiene un numero")
             digitos = int(input("Ingrese un numero: "))
-            print(f"El numero {digitos} digitos tiene", Calcular(digitos), "Digitos")
+            if digitos < 0:
+                print("el numero no puede ser negativo")
+            else:
+                print(f"El numero {digitos} digitos tiene", Calcular(digitos), "Digitos")
 
 
 
