@@ -24,6 +24,15 @@ def Calcular(digitos):
     else:
         return 1 + Calcular(digitos // 10)
 
+def Binario(NumeroBinario):
+    if NumeroBinario == 0:
+        return 0
+    else:
+        resultado3 = NumeroBinario % 100
+        resultado4 = resultado3 // 100
+        return Binario(resultado3)
+
+
 
 print("Parcial parte 2")
 opcion = 0
@@ -35,6 +44,7 @@ while opcion != 6:
     print("3.- Contar cuántas veces aparece una letra en una cadena")
     print("4.- Convertir un numero decimal a binario")
     print("5.- Calcular cuantos dígitos tiene un numero")
+    print("6.- Salir del programa")
     opcion = int(input("Ingrese la opcion que desea: "))
     match opcion:
         case 1:
@@ -66,6 +76,8 @@ while opcion != 6:
             print(f"La letra {letra} aparece ", contar(cadena, letra))
         case 4:
             print("\n Convertir un numero decimal a binario")
+            Numerobinario = int(input("Ingrese el numero de binario: "))
+            print("El numero binario es: ", Binario(Numerobinario))
 
         case 5:
             print("Calcular cuantos digitos tiene un numero")
@@ -74,6 +86,8 @@ while opcion != 6:
                 print("el numero no puede ser negativo")
             else:
                 print(f"El numero {digitos} digitos tiene", Calcular(digitos), "Digitos")
+        case 6:
+            print("Gracias por utilizar nuestro programa :)")
 
 
 
